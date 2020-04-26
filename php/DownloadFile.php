@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * php下载网络资源，低耗内存，防止内存溢出
+ */
 class DownloadFile {
 
     private $header = '';
@@ -52,6 +55,5 @@ class DownloadFile {
 }
 
 ini_set("memory_limit", "2M");
-$s = time();
 $obj = new DownloadFile();
 $obj->download('http://archive.apache.org/dist/hadoop/common/hadoop-2.7.2/hadoop-2.7.2.tar.gz', 'D:/hadoop-2.7.2.tar.gz');
